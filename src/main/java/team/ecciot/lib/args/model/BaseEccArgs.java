@@ -1,4 +1,4 @@
-package team.ecciot.lib.args.thread;
+package team.ecciot.lib.args.model;
 
 import com.alibaba.fastjson.JSON;
 

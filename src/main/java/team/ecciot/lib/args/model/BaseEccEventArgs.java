@@ -1,4 +1,4 @@
-package team.ecciot.lib.args.thread;
+package team.ecciot.lib.args.model;
 
 
 public abstract class BaseEccEventArgs extends BaseEccArgs {
