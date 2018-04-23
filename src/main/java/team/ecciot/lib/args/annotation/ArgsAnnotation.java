@@ -8,6 +8,6 @@ import java.lang.annotation.Target;
 
 @Retention(RUNTIME)
 @Target(TYPE)
-public @interface CmdArgsAnnotation {
+public @interface ArgsAnnotation {
 	String action();
 }

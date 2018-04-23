@@ -1,9 +1,9 @@
 package team.ecciot.lib.args.model.cmd;
 
-import team.ecciot.lib.args.annotation.CmdArgsAnnotation;
+import team.ecciot.lib.args.annotation.ArgsAnnotation;
 import team.ecciot.lib.args.model.BaseEccCmdArgs;
 
-@CmdArgsAnnotation(action = "EccCmd_ControlItem")
+@ArgsAnnotation(action = "EccCmd_ControlItem")
 public class ControlItemCmdArgs extends BaseEccCmdArgs {
 	private String itemID;
     private String atCmd;

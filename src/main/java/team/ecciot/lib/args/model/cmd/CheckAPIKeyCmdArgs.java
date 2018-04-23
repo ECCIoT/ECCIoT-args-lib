@@ -1,9 +1,9 @@
 package team.ecciot.lib.args.model.cmd;
 
-import team.ecciot.lib.args.annotation.CmdArgsAnnotation;
+import team.ecciot.lib.args.annotation.ArgsAnnotation;
 import team.ecciot.lib.args.model.BaseEccCmdArgs;
 
-@CmdArgsAnnotation(action = "EccCmd_CheckAPIKey")
+@ArgsAnnotation(action = "EccCmd_CheckAPIKey")
 public class CheckAPIKeyCmdArgs extends BaseEccCmdArgs{
 	private String apiKey;
 
