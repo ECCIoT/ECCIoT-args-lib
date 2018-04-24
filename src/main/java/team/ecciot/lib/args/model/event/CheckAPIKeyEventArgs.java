@@ -5,12 +5,14 @@ import team.ecciot.lib.args.model.BaseEccEventArgs;
 
 @ArgsAnnotation(action = "EccEvent_CheckAPIKey")
 public class CheckAPIKeyEventArgs extends BaseEccEventArgs {
-    public CheckAPIKeyEventArgs(String content) {
+	
+	public CheckAPIKeyEventArgs() {}
+	public CheckAPIKeyEventArgs(String content) {
         super(content);
     }
 
     @Override
-    protected void parse(String content) {
+	public void parse(String content) {
 
     }
 }

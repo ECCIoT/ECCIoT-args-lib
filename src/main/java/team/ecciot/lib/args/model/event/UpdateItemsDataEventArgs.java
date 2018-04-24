@@ -5,12 +5,14 @@ import team.ecciot.lib.args.model.BaseEccEventArgs;
 
 @ArgsAnnotation(action = "EccEvent_UpdateItemsData")
 public class UpdateItemsDataEventArgs extends BaseEccEventArgs {
-    public UpdateItemsDataEventArgs(String content) {
+	
+	public UpdateItemsDataEventArgs() {}
+	public UpdateItemsDataEventArgs(String content) {
         super(content);
     }
 
     @Override
-    protected void parse(String content) {
+	public void parse(String content) {
     	
     }
 }

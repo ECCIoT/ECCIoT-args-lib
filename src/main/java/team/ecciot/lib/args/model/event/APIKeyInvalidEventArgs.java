@@ -5,12 +5,14 @@ import team.ecciot.lib.args.model.BaseEccEventArgs;
 
 @ArgsAnnotation(action = "EccEvent_APIKeyInvalid")
 public class APIKeyInvalidEventArgs extends BaseEccEventArgs {
-    public APIKeyInvalidEventArgs(String content) {
+	
+	public APIKeyInvalidEventArgs() {}
+	public APIKeyInvalidEventArgs(String content) {
         super(content);
     }
 
     @Override
-    protected void parse(String content) {
+	public void parse(String content) {
 
     }
 }

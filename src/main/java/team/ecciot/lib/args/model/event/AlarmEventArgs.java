@@ -6,12 +6,13 @@ import team.ecciot.lib.args.model.BaseEccEventArgs;
 @ArgsAnnotation(action = "EccEvent_Alarm")
 public class AlarmEventArgs extends BaseEccEventArgs {
 
-    public AlarmEventArgs(String content) {
+	public AlarmEventArgs() {}
+	public AlarmEventArgs(String content) {
         super(content);
     }
 
     @Override
-    protected void parse(String content) {
+	public void parse(String content) {
 
     }
 }

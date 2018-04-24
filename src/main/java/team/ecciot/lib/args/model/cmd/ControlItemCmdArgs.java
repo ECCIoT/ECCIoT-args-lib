@@ -5,8 +5,15 @@ import team.ecciot.lib.args.model.BaseEccCmdArgs;
 
 @ArgsAnnotation(action = "EccCmd_ControlItem")
 public class ControlItemCmdArgs extends BaseEccCmdArgs {
+	
+	
 	private String itemID;
     private String atCmd;
+    
+    public ControlItemCmdArgs() {}
+    public ControlItemCmdArgs(String content) {
+		super(content);
+	}
     
 	public String getItemID() {
 		return itemID;
@@ -19,5 +26,9 @@ public class ControlItemCmdArgs extends BaseEccCmdArgs {
 	}
 	public void setAtCmd(String atCmd) {
 		this.atCmd = atCmd;
+	}
+	@Override
+	public void parse(String content) {
+		
 	}
 }
