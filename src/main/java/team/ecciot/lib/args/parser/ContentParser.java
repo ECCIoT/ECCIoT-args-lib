@@ -5,33 +5,33 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 
+import com.alibaba.fastjson.JSONObject;
+
 import team.ecciot.lib.args.annotation.ArgsAnnotation;
+import team.ecciot.lib.args.exception.ParserException;
 import team.ecciot.lib.args.model.BaseEccArgs;
 import team.ecciot.lib.args.utils.ClassUtil;
 
-public class Parser {
-	
-	
-	
-	
+public class ContentParser {
+
 	private BaseParserCallback callback;
 	private ParserCallbackType type;
 	
-	public Parser(BaseParserCallback callback,ParserCallbackType type){
+	public ContentParser(BaseParserCallback callback,ParserCallbackType type){
 		this.callback = callback;
 		this.type = type;
 	}
-	public Parser(CmdParserCallback cmdParserCallback) {
+	public ContentParser(CmdParserCallback cmdParserCallback) {
 		this.callback = cmdParserCallback;
 		this.type = ParserCallbackType.CMD_CALLBACK;
 	}
 	
-	public Parser(EventParserCallback eventParserCallback) {
+	public ContentParser(EventParserCallback eventParserCallback) {
 		this.callback = eventParserCallback;
 		this.type = ParserCallbackType.EVENT_CALLBACK;
 	}
 	
-	public void parse(String action, String content) {
+	public void parse(String action, String content) throws ParserException {
 		// ===根据action创建参数对象
 		// 判断Action是否存在
 		if (!ParserUtils.HM_ACTION_ARGS.containsKey(action)) {
@@ -45,8 +45,8 @@ public class Parser {
 				// 根据动作指令类型获取参数类型的完整名称，并以此通过反射创建参数对象
 				Object obj = Class.forName(argsModelClassName).newInstance();
 				// 调用参数对象的parse方法(获取parse方法，再传入参数)
-				Method parseMethod = Class.forName(argsModelClassName).getMethod("parse", String.class);
-				parseMethod.invoke(obj, content);
+				Method parseMethod = Class.forName(argsModelClassName).getMethod("parse", JSONObject.class);
+				parseMethod.invoke(obj, BaseEccArgs.castString2Json(content));
 				// 触发回调接口返回参数对象
 				Method callbackMethod = getCallbackClass().getMethod(action, Class.forName(argsModelClassName));
 				callbackMethod.invoke(callback, obj);
