@@ -7,12 +7,12 @@ import team.ecciot.lib.args.exception.ParserException;
 import team.ecciot.lib.args.model.BaseEccArgs;
 
 @ArgsAnnotation(action = "EccEvent_AskAPIKey")
-public class AskAPIKeyArgs extends BaseEccArgs {
+public class AskIdentityArgs extends BaseEccArgs {
 	
 	private String user,pwd;
 	
-	public AskAPIKeyArgs() {}
-	public AskAPIKeyArgs(String content) throws ParserException {
+	public AskIdentityArgs() {}
+	public AskIdentityArgs(String content) throws ParserException {
         super(content);
     }
 
