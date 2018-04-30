@@ -15,7 +15,7 @@ public class Test {
 		json.put("pwd", "123456");
 		
 		//System.out.println(json.toJSONString());
-		parser.parse("EccEvent_CheckAPIKey", json.toJSONString());
+		parser.parse("EccEvent_AskAPIKey", json.toJSONString());
 		
 //		CheckAPIKeyEventArgs arg;
 //		try {

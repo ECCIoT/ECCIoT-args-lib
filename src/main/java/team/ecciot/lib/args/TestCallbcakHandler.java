@@ -2,26 +2,26 @@ package team.ecciot.lib.args;
 
 import team.ecciot.lib.args.callback.IDeviceCmdCallback;
 import team.ecciot.lib.args.callback.IServerEventCallback;
-import team.ecciot.lib.args.model.cmd.AlarmCmdArgs;
-import team.ecciot.lib.args.model.cmd.CheckAPIKeyCmdArgs;
-import team.ecciot.lib.args.model.event.APIKeyInvalidEventArgs;
-import team.ecciot.lib.args.model.event.APIKeyVerifiedEventArgs;
-import team.ecciot.lib.args.model.event.CheckAPIKeyEventArgs;
+import team.ecciot.lib.args.model.impl.APIKeyInvalidArgs;
+import team.ecciot.lib.args.model.impl.APIKeyVerifiedArgs;
+import team.ecciot.lib.args.model.impl.AlarmArgs;
+import team.ecciot.lib.args.model.impl.AskAPIKeyArgs;
+import team.ecciot.lib.args.model.impl.CheckAPIKeyArgs;
 
 public class TestCallbcakHandler implements IServerEventCallback,IDeviceCmdCallback{
 
 	@Override
-	public void EccEvent_CheckAPIKey(CheckAPIKeyEventArgs args) {
+	public void EccEvent_AskAPIKey(AskAPIKeyArgs args) {
 		System.out.println(args);
 	}
 
 	@Override
-	public void EccEvent_APIKeyVerified(APIKeyVerifiedEventArgs args) {
+	public void EccEvent_APIKeyVerified(APIKeyVerifiedArgs args) {
 		System.out.println(args);
 	}
 
 	@Override
-	public void EccEvent_APIKeyInvalid(APIKeyInvalidEventArgs args) {
+	public void EccEvent_APIKeyInvalid(APIKeyInvalidArgs args) {
 		System.out.println(args);
 	}
 
@@ -31,12 +31,12 @@ public class TestCallbcakHandler implements IServerEventCallback,IDeviceCmdCallb
 	}
 
 	@Override
-	public void EccCmd_CheckAPIKey(CheckAPIKeyCmdArgs args) {
+	public void EccCmd_CheckAPIKey(CheckAPIKeyArgs args) {
 		System.out.println(args);
 	}
 
 	@Override
-	public void EccCmd_Alarm(AlarmCmdArgs args) {
+	public void EccCmd_Alarm(AlarmArgs args) {
 		System.out.println(args);
 	}
 	
