@@ -1,6 +1,6 @@
-package team.ecciot.lib.args.parser;
+package team.ecciot.lib.args.callback;
 
-public interface BaseParserCallback{
+public interface IBaseParserCallback{
 	/**
 	 * 无效的动作指令
 	 * @param action
