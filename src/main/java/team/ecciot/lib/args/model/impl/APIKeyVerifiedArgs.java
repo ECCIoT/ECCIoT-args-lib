@@ -1,16 +1,16 @@
-package team.ecciot.lib.args.model.event;
+package team.ecciot.lib.args.model.impl;
 
 import com.alibaba.fastjson.JSONObject;
 
 import team.ecciot.lib.args.annotation.ArgsAnnotation;
 import team.ecciot.lib.args.exception.ParserException;
-import team.ecciot.lib.args.model.BaseEccEventArgs;
+import team.ecciot.lib.args.model.BaseEccArgs;
 
 @ArgsAnnotation(action = "EccEvent_APIKeyVerified")
-public class APIKeyVerifiedEventArgs extends BaseEccEventArgs {
+public class APIKeyVerifiedArgs extends BaseEccArgs {
 	
-	public APIKeyVerifiedEventArgs() {}
-	public APIKeyVerifiedEventArgs(String content) throws ParserException {
+	public APIKeyVerifiedArgs() {}
+	public APIKeyVerifiedArgs(String content) throws ParserException {
         super(content);
     }
 

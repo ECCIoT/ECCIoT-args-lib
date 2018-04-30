@@ -8,8 +8,6 @@ import java.util.List;
 import com.alibaba.fastjson.JSONObject;
 
 import team.ecciot.lib.args.annotation.ArgsAnnotation;
-import team.ecciot.lib.args.callback.IBaseCmdCallback;
-import team.ecciot.lib.args.callback.IBaseEventCallback;
 import team.ecciot.lib.args.callback.IBaseParserCallback;
 import team.ecciot.lib.args.callback.ICmsCmdCallback;
 import team.ecciot.lib.args.callback.ICmsEventCallback;

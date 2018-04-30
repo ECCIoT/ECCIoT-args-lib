@@ -1,16 +1,16 @@
-package team.ecciot.lib.args.model.event;
+package team.ecciot.lib.args.model.impl;
 
 import com.alibaba.fastjson.JSONObject;
 
 import team.ecciot.lib.args.annotation.ArgsAnnotation;
 import team.ecciot.lib.args.exception.ParserException;
-import team.ecciot.lib.args.model.BaseEccEventArgs;
+import team.ecciot.lib.args.model.BaseEccArgs;
 
 @ArgsAnnotation(action = "EccEvent_APIKeyInvalid")
-public class APIKeyInvalidEventArgs extends BaseEccEventArgs {
+public class APIKeyInvalidArgs extends BaseEccArgs {
 	
-	public APIKeyInvalidEventArgs() {}
-	public APIKeyInvalidEventArgs(String content) throws ParserException {
+	public APIKeyInvalidArgs() {}
+	public APIKeyInvalidArgs(String content) throws ParserException {
         super(content);
     }
 

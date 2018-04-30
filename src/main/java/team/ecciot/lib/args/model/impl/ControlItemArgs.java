@@ -1,20 +1,20 @@
-package team.ecciot.lib.args.model.cmd;
+package team.ecciot.lib.args.model.impl;
 
 import com.alibaba.fastjson.JSONObject;
 
 import team.ecciot.lib.args.annotation.ArgsAnnotation;
 import team.ecciot.lib.args.exception.ParserException;
-import team.ecciot.lib.args.model.BaseEccCmdArgs;
+import team.ecciot.lib.args.model.BaseEccArgs;
 
 @ArgsAnnotation(action = "EccCmd_ControlItem")
-public class ControlItemCmdArgs extends BaseEccCmdArgs {
+public class ControlItemArgs extends BaseEccArgs {
 	
 	
 	private String itemID;
     private String atCmd;
     
-    public ControlItemCmdArgs() {}
-    public ControlItemCmdArgs(String content) throws ParserException {
+    public ControlItemArgs() {}
+    public ControlItemArgs(String content) throws ParserException {
 		super(content);
 	}
     
