@@ -9,15 +9,10 @@ import com.alibaba.fastjson.JSONObject;
 
 import team.ecciot.lib.args.annotation.ArgsAnnotation;
 import team.ecciot.lib.args.callback.IBaseParserCallback;
-import team.ecciot.lib.args.callback.ICmsCmdCallback;
 import team.ecciot.lib.args.callback.ICmsEventCallback;
-import team.ecciot.lib.args.callback.IDeviceCmdCallback;
 import team.ecciot.lib.args.callback.IDeviceEventCallback;
-import team.ecciot.lib.args.callback.IRtcCmdCallback;
 import team.ecciot.lib.args.callback.IRtcEventCallback;
-import team.ecciot.lib.args.callback.IServerCmdCallback;
 import team.ecciot.lib.args.callback.IServerEventCallback;
-import team.ecciot.lib.args.callback.ITerminalCmdCallback;
 import team.ecciot.lib.args.callback.ITerminalEventCallback;
 import team.ecciot.lib.args.exception.ParserException;
 import team.ecciot.lib.args.model.BaseEccArgs;
@@ -70,19 +65,9 @@ public class ContentParser {
 		this.clazz = callbackClass;
 	}
 
-	public ContentParser(ICmsCmdCallback callback) {
-		this.callback = callback;
-		this.clazz = ICmsCmdCallback.class;
-	}
-	
 	public ContentParser(ICmsEventCallback callback) {
 		this.callback = callback;
 		this.clazz = ICmsEventCallback.class;
-	}
-	
-	public ContentParser(IDeviceCmdCallback callback) {
-		this.callback = callback;
-		this.clazz = IDeviceCmdCallback.class;
 	}
 	
 	public ContentParser(IDeviceEventCallback callback) {
@@ -90,19 +75,9 @@ public class ContentParser {
 		this.clazz = IDeviceEventCallback.class;
 	}
 	
-	public ContentParser(IRtcCmdCallback callback) {
-		this.callback = callback;
-		this.clazz = IRtcCmdCallback.class;
-	}
-	
 	public ContentParser(IRtcEventCallback callback) {
 		this.callback = callback;
 		this.clazz = IRtcEventCallback.class;
-	}
-	
-	public ContentParser(IServerCmdCallback callback) {
-		this.callback = callback;
-		this.clazz = IServerCmdCallback.class;
 	}
 	
 	public ContentParser(IServerEventCallback callback) {
@@ -110,16 +85,10 @@ public class ContentParser {
 		this.clazz = IServerEventCallback.class;
 	}
 	
-	public ContentParser(ITerminalCmdCallback callback) {
-		this.callback = callback;
-		this.clazz = ITerminalCmdCallback.class;
-	}
-	
 	public ContentParser(ITerminalEventCallback callback) {
 		this.callback = callback;
 		this.clazz = ITerminalEventCallback.class;
 	}
-
 	
 	public boolean parse(String action, String content) throws ParserException {
 		// ===根据action创建参数对象

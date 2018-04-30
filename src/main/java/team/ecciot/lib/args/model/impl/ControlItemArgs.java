@@ -6,7 +6,7 @@ import team.ecciot.lib.args.annotation.ArgsAnnotation;
 import team.ecciot.lib.args.exception.ParserException;
 import team.ecciot.lib.args.model.BaseEccArgs;
 
-@ArgsAnnotation(action = "EccCmd_ControlItem")
+@ArgsAnnotation(action = "Terminal_ControlItem")
 public class ControlItemArgs extends BaseEccArgs {
 	
 	

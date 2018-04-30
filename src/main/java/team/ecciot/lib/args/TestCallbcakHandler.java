@@ -1,29 +1,15 @@
 package team.ecciot.lib.args;
 
-import team.ecciot.lib.args.callback.IDeviceCmdCallback;
 import team.ecciot.lib.args.callback.IServerEventCallback;
 import team.ecciot.lib.args.model.impl.APIKeyInvalidArgs;
 import team.ecciot.lib.args.model.impl.APIKeyVerifiedArgs;
 import team.ecciot.lib.args.model.impl.AlarmArgs;
-import team.ecciot.lib.args.model.impl.AskAPIKeyArgs;
-import team.ecciot.lib.args.model.impl.CheckAPIKeyArgs;
+import team.ecciot.lib.args.model.impl.AskIdentityArgs;
+import team.ecciot.lib.args.model.impl.BindDeviceArgs;
+import team.ecciot.lib.args.model.impl.ControlItemArgs;
+import team.ecciot.lib.args.model.impl.DeviceStateChangedArgs;
 
-public class TestCallbcakHandler implements IServerEventCallback,IDeviceCmdCallback{
-
-	@Override
-	public void EccEvent_AskAPIKey(AskAPIKeyArgs args) {
-		System.out.println(args);
-	}
-
-	@Override
-	public void EccEvent_APIKeyVerified(APIKeyVerifiedArgs args) {
-		System.out.println(args);
-	}
-
-	@Override
-	public void EccEvent_APIKeyInvalid(APIKeyInvalidArgs args) {
-		System.out.println(args);
-	}
+public class TestCallbcakHandler implements IServerEventCallback{
 
 	@Override
 	public void InvalidActionInstruction(String action, String content) {
@@ -31,13 +17,39 @@ public class TestCallbcakHandler implements IServerEventCallback,IDeviceCmdCallb
 	}
 
 	@Override
-	public void EccCmd_CheckAPIKey(CheckAPIKeyArgs args) {
+	public void Device_Alarm(AlarmArgs args) {
+		System.out.println(args);
+	}
+
+
+	@Override
+	public void RTC_AskIdentity(AskIdentityArgs args) {
 		System.out.println(args);
 	}
 
 	@Override
-	public void EccCmd_Alarm(AlarmArgs args) {
+	public void RTC_APIKeyVerified(APIKeyVerifiedArgs args) {
 		System.out.println(args);
 	}
-	
+
+	@Override
+	public void RTC_APIKeyInvalid(APIKeyInvalidArgs args) {
+		System.out.println(args);
+	}
+
+	@Override
+	public void Terminal_ControlItem(ControlItemArgs args) {
+		System.out.println(args);
+	}
+
+	@Override
+	public void RTC_DeviceStateChanged(DeviceStateChangedArgs args) {
+		System.out.println(args);		
+	}
+
+	@Override
+	public void Terminal_BindDevice(BindDeviceArgs args) {
+		System.out.println(args);		
+	}
+
 }

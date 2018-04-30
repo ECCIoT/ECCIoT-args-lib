@@ -9,7 +9,7 @@ import team.ecciot.lib.args.annotation.ArgsAnnotation;
 import team.ecciot.lib.args.exception.ParserException;
 import team.ecciot.lib.args.model.BaseEccArgs;
 
-@ArgsAnnotation(action = "EccEvent_UpdateItemsData")
+@ArgsAnnotation(action = "Server_UpdateItemsData")
 public class UpdateItemsDataArgs extends BaseEccArgs {
 	
 	private ItemData[] itemsData;

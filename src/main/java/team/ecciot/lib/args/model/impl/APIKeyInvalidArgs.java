@@ -6,7 +6,7 @@ import team.ecciot.lib.args.annotation.ArgsAnnotation;
 import team.ecciot.lib.args.exception.ParserException;
 import team.ecciot.lib.args.model.BaseEccArgs;
 
-@ArgsAnnotation(action = "EccEvent_APIKeyInvalid")
+@ArgsAnnotation(action = "RTC_APIKeyInvalid")
 public class APIKeyInvalidArgs extends BaseEccArgs {
 	
 	public APIKeyInvalidArgs() {}
