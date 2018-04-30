@@ -123,13 +123,13 @@ public class ContentParser {
 	}
 
 	
-	public void parse(String action, String content) throws ParserException {
+	public boolean parse(String action, String content) throws ParserException {
 		// ===根据action创建参数对象
 		// 判断Action是否存在
 		if (!ParserUtils.HM_ACTION_ARGS.containsKey(action)) {
 			// 不存在则触发无效指令的回调方法
 			callback.InvalidActionInstruction(action, content);
-			return;
+			return false;
 		} else {
 			// 获取参数类型名称
 			String argsModelClassName = ParserUtils.HM_ACTION_ARGS.get(action);
@@ -142,11 +142,14 @@ public class ContentParser {
 				// 触发回调接口返回参数对象
 				Method callbackMethod = clazz.getMethod(action, Class.forName(argsModelClassName));
 				callbackMethod.invoke(callback, obj);
+				//返回true，表示解析成功
+				return true;
 			} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (NoSuchMethodException e) {
 				//指令存在，但不存在当前所指定的Callback中。
 				callback.InvalidActionInstruction(action, content);
+				return false;
 			} catch (SecurityException e) {
 				e.printStackTrace();
 			} catch (IllegalArgumentException e) {
@@ -154,6 +157,7 @@ public class ContentParser {
 			} catch (InvocationTargetException e) {
 				e.printStackTrace();
 			}
+			return false;
 		}
 	}
 	
