@@ -1,5 +1,6 @@
 package team.ecciot.lib.args;
 
+import team.ecciot.lib.args.callback.ICheckIdentityCallback;
 import team.ecciot.lib.args.callback.IServerEventCallback;
 import team.ecciot.lib.args.model.impl.APIKeyInvalidArgs;
 import team.ecciot.lib.args.model.impl.APIKeyVerifiedArgs;
@@ -9,7 +10,7 @@ import team.ecciot.lib.args.model.impl.BindDeviceArgs;
 import team.ecciot.lib.args.model.impl.ControlItemArgs;
 import team.ecciot.lib.args.model.impl.DeviceStateChangedArgs;
 
-public class TestCallbcakHandler implements IServerEventCallback{
+public class TestCallbcakHandler implements IServerEventCallback,ICheckIdentityCallback{
 
 	@Override
 	public void InvalidActionInstruction(String action, String content) {
