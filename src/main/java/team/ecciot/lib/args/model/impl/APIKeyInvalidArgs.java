@@ -9,6 +9,8 @@ import team.ecciot.lib.args.model.BaseEccArgs;
 @ArgsAnnotation(action = "RTC_APIKeyInvalid")
 public class APIKeyInvalidArgs extends BaseEccArgs {
 	
+	private String message;
+	
 	public APIKeyInvalidArgs() {}
 	public APIKeyInvalidArgs(String content) throws ParserException {
         super(content);
@@ -17,5 +19,12 @@ public class APIKeyInvalidArgs extends BaseEccArgs {
 	@Override
 	public void parse(JSONObject content) {
 		
+	}
+	
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
 	}
 }

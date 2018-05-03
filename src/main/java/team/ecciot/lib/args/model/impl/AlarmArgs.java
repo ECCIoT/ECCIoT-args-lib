@@ -32,4 +32,14 @@ public class AlarmArgs extends BaseEccArgs {
 	public String getValue() {
 		return value;
 	}
+	public void setItemID(String itemID) {
+		this.itemID = itemID;
+	}
+	public void setField(String field) {
+		this.field = field;
+	}
+	public void setValue(String value) {
+		this.value = value;
+	}
+	
 }
