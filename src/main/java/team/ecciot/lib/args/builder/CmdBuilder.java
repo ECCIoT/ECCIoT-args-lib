@@ -8,10 +8,8 @@ import team.ecciot.lib.args.model.BaseEccArgs;
 public class CmdBuilder {
 	
 	public static JSONObject build(BaseEccArgs args){
-		//获取参数类对应的Annotation
-		ArgsAnnotation an = args.getClass().getAnnotation(ArgsAnnotation.class);
 		//获取与参数类型对应的Action
-		String action = an.action();
+		String action = getActionNameByArgsObject(args);
 		//实例化一个JsonObject对象
 		JSONObject json = new JSONObject();
 		json.put("action", action);
@@ -26,5 +24,17 @@ public class CmdBuilder {
 		json.put("client", client);
 		json.put("uid", uid);
 		return json;
+	}
+	
+	public static String getActionNameByArgsObject(BaseEccArgs args){
+		//返回与参数对象对应的Action名称
+		return getActionNameByArgsClass(args.getClass());
+	}
+	
+	public static String getActionNameByArgsClass(Class<? extends BaseEccArgs> clazz){
+		//获取参数类对应的Annotation
+		ArgsAnnotation an = clazz.getAnnotation(ArgsAnnotation.class);
+		//返回与参数类型对应的Action名称
+		return an.action();
 	}
 }
