@@ -9,13 +9,12 @@ import team.ecciot.lib.args.model.BaseEccArgs;
 @ArgsAnnotation(action = "EccCmd_CheckAPIKey")
 public class CheckAPIKeyArgs extends BaseEccArgs{
 	
+	private String apiKey;
+
 	public CheckAPIKeyArgs() {}
-	
 	public CheckAPIKeyArgs(String content) throws ParserException {
 		super(content);
 	}
-
-	private String apiKey;
 
 	public String getApiKey() {
 		return apiKey;

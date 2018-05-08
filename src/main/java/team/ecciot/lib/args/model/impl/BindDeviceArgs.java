@@ -18,7 +18,7 @@ public class BindDeviceArgs extends BaseEccArgs {
 
 	@Override
 	public void parse(JSONObject content) {
-		
+		itemID = content.getString("itemID");
 	}
 	
 	public String getItemID() {

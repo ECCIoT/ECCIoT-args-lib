@@ -19,7 +19,8 @@ public class CheckServerIdentityArgs extends BaseEccArgs {
 
 	@Override
 	public void parse(JSONObject content) {
-		
+		secretkey = content.getString("secretkey");
+		apikey = content.getString("apikey");
 	}
 	public String getSecretkey() {
 		return secretkey;

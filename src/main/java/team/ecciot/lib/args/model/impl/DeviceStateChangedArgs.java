@@ -21,7 +21,8 @@ public class DeviceStateChangedArgs extends BaseEccArgs {
 
 	@Override
 	public void parse(JSONObject content) {
-
+		itemID = content.getString("itemID");
+		state = content.getBooleanValue("state");
 	}
 
 	public String getItemID() {

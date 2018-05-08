@@ -9,7 +9,7 @@ import team.ecciot.lib.args.model.BaseEccArgs;
 @ArgsAnnotation(action = "RTC_AskIdentity")
 public class AskIdentityArgs extends BaseEccArgs {
 	
-	private String user,pwd;
+	String message;
 	
 	public AskIdentityArgs() {}
 	public AskIdentityArgs(String content) throws ParserException {
@@ -18,15 +18,13 @@ public class AskIdentityArgs extends BaseEccArgs {
 
 	@Override
 	public void parse(JSONObject content) {
-		user = content.getString("user");
-		pwd = content.getString("pwd");
+		message = content.getString("message");
 	}
 	
-	public String getPwd() {
-		return pwd;
+	public String getMessage() {
+		return message;
 	}
-	public String getUser() {
-		return user;
+	public void setMessage(String message) {
+		this.message = message;
 	}
-	
 }

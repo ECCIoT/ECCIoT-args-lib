@@ -21,7 +21,10 @@ public class CheckDeviceIdentityArgs extends BaseEccArgs {
 
 	@Override
 	public void parse(JSONObject content) {
-		
+		apikey = content.getString("apikey");
+		itemID = content.getString("itemID");
+		model = content.getString("model");
+		version = content.getString("version");
 	}
 	
 	public String getApikey() {

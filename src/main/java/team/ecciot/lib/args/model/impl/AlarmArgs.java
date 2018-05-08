@@ -20,7 +20,9 @@ public class AlarmArgs extends BaseEccArgs {
 
 	@Override
 	public void parse(JSONObject content) {
-		
+		itemID = content.getString("itemID");
+		field = content.getString("field");
+		value = content.getString("value");
 	}
 	
 	public String getItemID() {

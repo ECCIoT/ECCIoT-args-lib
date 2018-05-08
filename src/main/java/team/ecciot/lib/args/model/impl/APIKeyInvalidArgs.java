@@ -18,7 +18,7 @@ public class APIKeyInvalidArgs extends BaseEccArgs {
 
 	@Override
 	public void parse(JSONObject content) {
-		
+		message = content.getString("message");
 	}
 	
 	public String getMessage() {

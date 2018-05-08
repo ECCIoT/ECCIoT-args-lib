@@ -21,7 +21,10 @@ public class CheckTerminalIdentityArgs extends BaseEccArgs {
 
 	@Override
 	public void parse(JSONObject content) {
-		
+		apikey = content.getString("apikey");
+		token = content.getString("token");
+		platform = content.getString("platform");
+		version = content.getString("version");
 	}
 	public String getApikey() {
 		return apikey;
