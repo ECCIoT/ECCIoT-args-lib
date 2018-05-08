@@ -6,22 +6,23 @@ import team.ecciot.lib.args.annotation.ArgsAnnotation;
 import team.ecciot.lib.args.exception.ParserException;
 import team.ecciot.lib.args.model.BaseEccArgs;
 
-@ArgsAnnotation(action = "Server_ChangeDeviceState")
-public class ChangeDeviceStateArgs extends BaseEccArgs {
+@ArgsAnnotation(action = "Server_CloseDevice")
+public class CloseDeviceArgs extends BaseEccArgs {
 
 	private String itemID;
 	private boolean state;
 
-	public ChangeDeviceStateArgs() {
+	public CloseDeviceArgs() {
 	}
 
-	public ChangeDeviceStateArgs(String content) throws ParserException {
+	public CloseDeviceArgs(String content) throws ParserException {
 		super(content);
 	}
 
 	@Override
 	public void parse(JSONObject content) {
-
+		itemID = content.getString("itemID");
+		state = content.getBooleanValue("state");
 	}
 
 	public String getItemID() {
