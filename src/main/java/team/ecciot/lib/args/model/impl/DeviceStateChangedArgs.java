@@ -11,6 +11,7 @@ public class DeviceStateChangedArgs extends BaseEccArgs {
 
 	private String itemID;
 	private boolean state;
+	private CheckDeviceIdentityArgs deviceInfo;
 
 	public DeviceStateChangedArgs() {
 	}
@@ -23,6 +24,7 @@ public class DeviceStateChangedArgs extends BaseEccArgs {
 	public void parse(JSONObject content) {
 		itemID = content.getString("itemID");
 		state = content.getBooleanValue("state");
+		if(content.containsKey("deviceInfo"))deviceInfo.parse(content.getJSONObject("deviceInfo"));
 	}
 
 	public String getItemID() {
@@ -39,5 +41,11 @@ public class DeviceStateChangedArgs extends BaseEccArgs {
 
 	public void setState(boolean state) {
 		this.state = state;
+	}
+	public CheckDeviceIdentityArgs getDeviceInfo() {
+		return deviceInfo;
+	}
+	public void setDeviceInfo(CheckDeviceIdentityArgs deviceInfo) {
+		this.deviceInfo = deviceInfo;
 	}
 }
