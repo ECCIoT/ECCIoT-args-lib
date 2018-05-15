@@ -10,6 +10,7 @@ import team.ecciot.lib.args.model.BaseEccArgs;
 public class BindDeviceArgs extends BaseEccArgs {
 
 	private String itemID;
+	private String token;
 	
 	public BindDeviceArgs() {}
 	public BindDeviceArgs(String content) throws ParserException {
@@ -19,6 +20,7 @@ public class BindDeviceArgs extends BaseEccArgs {
 	@Override
 	public void parse(JSONObject content) {
 		itemID = content.getString("itemID");
+		token = content.getString("token");
 	}
 	
 	public String getItemID() {
@@ -26,5 +28,11 @@ public class BindDeviceArgs extends BaseEccArgs {
 	}
 	public void setItemID(String itemID) {
 		this.itemID = itemID;
+	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
 	}
 }
