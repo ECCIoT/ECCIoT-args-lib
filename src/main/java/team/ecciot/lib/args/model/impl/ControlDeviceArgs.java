@@ -10,6 +10,7 @@ import team.ecciot.lib.args.model.BaseEccArgs;
 public class ControlDeviceArgs extends BaseEccArgs {
 	
 	private String itemID;
+	private String token;
     private String atCmd;
     
     public ControlDeviceArgs() {}
@@ -29,9 +30,16 @@ public class ControlDeviceArgs extends BaseEccArgs {
 	public void setAtCmd(String atCmd) {
 		this.atCmd = atCmd;
 	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
+	}
 	@Override
 	public void parse(JSONObject content) {
 		itemID = content.getString("itemID");
 		atCmd = content.getString("atCmd");
+		token = content.getString("token");
 	}
 }
