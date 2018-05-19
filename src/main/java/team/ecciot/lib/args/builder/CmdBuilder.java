@@ -1,5 +1,6 @@
 package team.ecciot.lib.args.builder;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
 import team.ecciot.lib.args.annotation.ArgsAnnotation;
@@ -25,6 +26,25 @@ public class CmdBuilder {
 		json.put("uid", uid);
 		return json;
 	}
+	
+	public static String castArgs2AT(BaseEccArgs args){
+		//获取与参数类型对应的Action
+		String action = getActionNameByArgsObject(args);
+		//AT指令名称
+		String at = "AT+" + action.split("_")[1];
+		//实例化一个JsonObject对象
+		JSONObject json = (JSONObject) JSON.toJSON(args);
+		if(json.values().size()>0){
+			at += "=";
+			String values = json.values().toString();
+			values = values.substring(1, values.length()-1);
+			values = values.replace(", ", ",");
+			at += values;
+		}
+		return at;
+	}
+	
+	
 	
 	public static String getActionNameByArgsObject(BaseEccArgs args){
 		//返回与参数对象对应的Action名称

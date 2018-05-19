@@ -40,7 +40,8 @@ public class ContentParser {
 				Object obj = Class.forName(argsModelClassName).newInstance();
 				// 调用参数对象的parse方法(获取parse方法，再传入参数)
 				Method parseMethod = Class.forName(argsModelClassName).getMethod("parse", JSONObject.class);
-				parseMethod.invoke(obj, BaseEccArgs.castString2Json(content));
+				JSONObject jo = BaseEccArgs.castString2Json(content);
+				parseMethod.invoke(obj, jo);
 				// 触发回调接口返回参数对象
 				Method callbackMethod = clazz.getMethod(action, Class.forName(argsModelClassName));
 				callbackMethod.invoke(callback, obj);

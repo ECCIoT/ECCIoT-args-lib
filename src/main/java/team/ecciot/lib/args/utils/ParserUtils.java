@@ -12,7 +12,7 @@ import team.ecciot.lib.args.annotation.ArgsAnnotation;
  */
 public class ParserUtils{
 	public static HashMap<String, String> HM_ACTION_ARGS;
-	
+
 	static{
 		try {
 			HM_ACTION_ARGS =scanPackage("team.ecciot.lib.args.model") ;
@@ -20,11 +20,11 @@ public class ParserUtils{
 			e.printStackTrace();
 		}
 	}
-	
+
 	private static HashMap<String, String> scanPackage(String pkg) throws Exception {
 		List<Class<?>> lst = ClassUtil.getClasses(pkg);
 		HashMap<String, String> hm = new HashMap<String, String>();
-		
+
 		for(Class<?> c:lst){
 			if(c.getAnnotations().length>0){
 				if(c.isAnnotationPresent(ArgsAnnotation.class)){
